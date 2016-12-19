@@ -12,6 +12,8 @@
 		5845D2AE1E08633A00AC07F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5845D2AC1E08633A00AC07F7 /* Main.storyboard */; };
 		5845D2B01E08633A00AC07F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5845D2AF1E08633A00AC07F7 /* Assets.xcassets */; };
 		5845D2B31E08633A00AC07F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5845D2B11E08633A00AC07F7 /* LaunchScreen.storyboard */; };
+		5845D2BE1E087DC500AC07F7 /* BitcoinResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5845D2BD1E087DC500AC07F7 /* BitcoinResponse.swift */; };
+		5845D2C01E087E0300AC07F7 /* BitcoinResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5845D2BF1E087E0300AC07F7 /* BitcoinResource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		5845D2AF1E08633A00AC07F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5845D2B21E08633A00AC07F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5845D2B41E08633A00AC07F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5845D2BD1E087DC500AC07F7 /* BitcoinResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitcoinResponse.swift; sourceTree = "<group>"; };
+		5845D2BF1E087E0300AC07F7 /* BitcoinResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitcoinResource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,8 @@
 			isa = PBXGroup;
 			children = (
 				5845D2A81E08633A00AC07F7 /* AppDelegate.swift */,
+				5845D2BD1E087DC500AC07F7 /* BitcoinResponse.swift */,
+				5845D2BF1E087E0300AC07F7 /* BitcoinResource.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -161,6 +167,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5845D2C01E087E0300AC07F7 /* BitcoinResource.swift in Sources */,
+				5845D2BE1E087DC500AC07F7 /* BitcoinResponse.swift in Sources */,
 				5845D2AB1E08633A00AC07F7 /* ViewController.swift in Sources */,
 				5845D2A91E08633A00AC07F7 /* AppDelegate.swift in Sources */,
 			);
