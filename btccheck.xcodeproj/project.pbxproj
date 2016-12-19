@@ -54,14 +54,38 @@
 		5845D2A71E08633A00AC07F7 /* btccheck */ = {
 			isa = PBXGroup;
 			children = (
-				5845D2A81E08633A00AC07F7 /* AppDelegate.swift */,
-				5845D2AA1E08633A00AC07F7 /* ViewController.swift */,
-				5845D2AC1E08633A00AC07F7 /* Main.storyboard */,
-				5845D2AF1E08633A00AC07F7 /* Assets.xcassets */,
-				5845D2B11E08633A00AC07F7 /* LaunchScreen.storyboard */,
+				5845D2BC1E0872A500AC07F7 /* controller */,
+				5845D2BB1E0872A100AC07F7 /* view */,
+				5845D2BA1E08729C00AC07F7 /* model */,
 				5845D2B41E08633A00AC07F7 /* Info.plist */,
 			);
 			path = btccheck;
+			sourceTree = "<group>";
+		};
+		5845D2BA1E08729C00AC07F7 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				5845D2A81E08633A00AC07F7 /* AppDelegate.swift */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		5845D2BB1E0872A100AC07F7 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				5845D2AC1E08633A00AC07F7 /* Main.storyboard */,
+				5845D2AF1E08633A00AC07F7 /* Assets.xcassets */,
+				5845D2B11E08633A00AC07F7 /* LaunchScreen.storyboard */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		5845D2BC1E0872A500AC07F7 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				5845D2AA1E08633A00AC07F7 /* ViewController.swift */,
+			);
+			name = controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
