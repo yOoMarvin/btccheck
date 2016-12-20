@@ -33,25 +33,20 @@ class BitcoinResource {
                     print("problem with url")
                     return
             }
-            
             let task = session.dataTask(with: urlObj, completionHandler: { (data, response, error) in
-                
                 if let error = error {
                     print(error.localizedDescription)
                     return
                 }
-                
                 guard let data = data,
                       let apiResponse = self.createResponse(fromData: data) else {
                     print("no data?")
                     return
                 }
-                
                 DispatchQueue.main.async {
                     completion(apiResponse)
                 }
             })
-            
             task.resume()
         }
     
@@ -76,7 +71,6 @@ class BitcoinResource {
             print("problem with reading values")
             return nil
         }
-        
         let response = BitcoinResponse(price: price)
         return response
     }

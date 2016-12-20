@@ -10,15 +10,30 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    
+    override func viewWillAppear(_ animated: Bool) {
         
+        //set current date
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM/dd/yyy"
+        dateLabel.text = formatter.string(from: date)
+        
+        //init bitcoin resource and call completion to get data
         let resource = BitcoinResource()
         resource.fetchReport {
             (response) in
             
-            print(response.price)
+            //write data and make label visible
+            self.priceLabel.text = "\(response.price) $"
+            self.priceLabel.isHidden = false
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
 
     override func didReceiveMemoryWarning() {
