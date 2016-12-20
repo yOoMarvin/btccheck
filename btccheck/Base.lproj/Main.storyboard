@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -146,6 +147,9 @@
                                         <state key="normal" title="back to the past">
                                             <color key="titleColor" red="0.45882352941176469" green="0.45882352941176469" blue="0.45882352941176469" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="KDy-h7-uy2" kind="show" id="ysH-FD-YBC"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -176,6 +180,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1072.5" y="792.25352112676057"/>
+        </scene>
+        <!--bitcoin history-->
+        <scene sceneID="hLy-un-Fy3">
+            <objects>
+                <viewController title="bitcoin history" id="KDy-h7-uy2" customClass="LineChartViewController" customModule="btccheck" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="81d-oW-plC"/>
+                        <viewControllerLayoutGuide type="bottom" id="7fD-IT-145"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QGp-eA-1zB">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ROe-1u-IBo" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="16" y="0.0" width="288" height="504"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ROe-1u-IBo" firstAttribute="top" secondItem="81d-oW-plC" secondAttribute="bottom" id="2Th-c9-Bl9"/>
+                            <constraint firstItem="7fD-IT-145" firstAttribute="top" secondItem="ROe-1u-IBo" secondAttribute="bottom" id="CJg-fm-Dua"/>
+                            <constraint firstItem="ROe-1u-IBo" firstAttribute="leading" secondItem="QGp-eA-1zB" secondAttribute="leadingMargin" id="DYV-NW-4ql"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ROe-1u-IBo" secondAttribute="trailing" id="gKp-Za-Efp"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <connections>
+                        <outlet property="lineChartView" destination="ROe-1u-IBo" id="Xnr-Rv-dve"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2wE-Or-gEN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1847" y="792"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kZX-1f-zcN">
