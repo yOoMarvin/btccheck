@@ -10,10 +10,11 @@ import Foundation
 
 struct BitcoinResponse {
     let price: Double
-    let high: Double
+    /*let high: Double
     let low: Double
     let open: Double
     let avg: Double
     let volume: Double
     let change: Double
+ */
 }

@@ -12,7 +12,13 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let resource = BitcoinResource()
+        resource.fetchReport {
+            (response) in
+            
+            print(response.price)
+        }
     }
 
     override func didReceiveMemoryWarning() {
