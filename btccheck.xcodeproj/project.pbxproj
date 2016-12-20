@@ -17,6 +17,8 @@
 		5845D5C01E09967300AC07F7 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5845D5BB1E09966500AC07F7 /* Charts.framework */; };
 		5845D5C11E09967300AC07F7 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5845D5BB1E09966500AC07F7 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5845D5C61E09979C00AC07F7 /* LineChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5845D5C51E09979C00AC07F7 /* LineChartViewController.swift */; };
+		5845D5CA1E09B65200AC07F7 /* HistoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5845D5C91E09B65200AC07F7 /* HistoryResponse.swift */; };
+		5845D5CE1E09B6B400AC07F7 /* HistoryResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5845D5CD1E09B6B400AC07F7 /* HistoryResource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +78,8 @@
 		5845D2BF1E087E0300AC07F7 /* BitcoinResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitcoinResource.swift; sourceTree = "<group>"; };
 		5845D5B41E09966500AC07F7 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = Charts/Charts.xcodeproj; sourceTree = "<group>"; };
 		5845D5C51E09979C00AC07F7 /* LineChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChartViewController.swift; sourceTree = "<group>"; };
+		5845D5C91E09B65200AC07F7 /* HistoryResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryResponse.swift; sourceTree = "<group>"; };
+		5845D5CD1E09B6B400AC07F7 /* HistoryResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryResource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +128,8 @@
 				5845D2A81E08633A00AC07F7 /* AppDelegate.swift */,
 				5845D2BD1E087DC500AC07F7 /* BitcoinResponse.swift */,
 				5845D2BF1E087E0300AC07F7 /* BitcoinResource.swift */,
+				5845D5C91E09B65200AC07F7 /* HistoryResponse.swift */,
+				5845D5CD1E09B6B400AC07F7 /* HistoryResource.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -262,7 +268,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5845D5CE1E09B6B400AC07F7 /* HistoryResource.swift in Sources */,
 				5845D2C01E087E0300AC07F7 /* BitcoinResource.swift in Sources */,
+				5845D5CA1E09B65200AC07F7 /* HistoryResponse.swift in Sources */,
 				5845D2BE1E087DC500AC07F7 /* BitcoinResponse.swift in Sources */,
 				5845D2AB1E08633A00AC07F7 /* ViewController.swift in Sources */,
 				5845D2A91E08633A00AC07F7 /* AppDelegate.swift in Sources */,
