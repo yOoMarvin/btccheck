@@ -60,18 +60,24 @@ class BitcoinResource {
             print("problem with json processing")
             return nil
         }
-        /*
-        guard let changeDict = jsonDict["changes"]?["percent"] as? NSDictionary else{
-            print("problem with reading dicts")
-            return nil
-        }
-         */
         
-        guard let price = jsonDict["ask"] as? Double else{
-            print("problem with reading values")
-            return nil
-        }
-        let response = BitcoinResponse(price: price)
+        //read dicts
+        let openDict = jsonDict["open"] as! [String:Any]
+        let changesDict = jsonDict["changes"] as! [String:Any]
+        let percentDict = changesDict["percent"] as! [String:Any]
+        let avgDict = jsonDict["averages"] as! [String:Any]
+
+        //read data from the dicts
+        let price = jsonDict["ask"] as! Double
+        let high = jsonDict["high"] as! Double
+        let low = jsonDict["low"] as! Double
+        let open = openDict["day"] as! Double
+        let avg = avgDict["week"] as! Double
+        let volume = jsonDict["volume"] as! Double
+        let change = percentDict["day"] as! Double
+        
+        //build response
+        let response = BitcoinResponse(price: price, high: high, low: low, open: open, avg: avg, volume: volume, change: change)
         return response
     }
     

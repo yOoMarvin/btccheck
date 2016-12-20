@@ -12,9 +12,14 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var openLabel: UILabel!
+    @IBOutlet weak var highLabel: UILabel!
+    @IBOutlet weak var lowLabel: UILabel!
+    @IBOutlet weak var changeLabel: UILabel!
+    @IBOutlet weak var avgLabel: UILabel!
+    @IBOutlet weak var volumeLabel: UILabel!
     
     override func viewWillAppear(_ animated: Bool) {
-        
         //set current date
         let date = Date()
         let formatter = DateFormatter()
@@ -29,6 +34,20 @@ class ViewController: UIViewController {
             //write data and make label visible
             self.priceLabel.text = "\(response.price) $"
             self.priceLabel.isHidden = false
+            
+            self.openLabel.text = "\(response.open) $"
+            self.highLabel.text = "\(response.high) $"
+            self.lowLabel.text = "\(response.low) $"
+            self.changeLabel.text = "\(response.change) %"
+            if response.change > 0 {
+                self.changeLabel.textColor = UIColor(red:0.18, green:0.65, blue:0.20, alpha:1.0)
+                self.changeLabel.text = "+ \(response.change) %"
+            } else {
+                self.changeLabel.textColor = UIColor.red
+                self.changeLabel.text = "- \(response.change) %"
+            }
+            self.avgLabel.text = "\(response.avg) $"
+            self.volumeLabel.text = "\(response.volume)"
         }
     }
     
