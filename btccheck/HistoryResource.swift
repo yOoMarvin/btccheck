@@ -65,12 +65,27 @@ class HistoryResource{
         var prices: [Double] = []
         
         for object in jsonArray{
+            //get avg price
             let avg = object["average"] as! Double
-            let time = object["time"] as! String
-            let index = time.index(time.startIndex, offsetBy: 10)
+            //get date and format it
+            var date = object["time"] as! String
+            let index = date.index(date.startIndex, offsetBy: 10)
+            date = date.substring(to: index)
+            let endOfYear = date.index(date.startIndex, offsetBy: 4)
+            let rangeOfYear = date.startIndex ..< endOfYear
+            let startOfMonth = date.index(date.startIndex, offsetBy: 5)
+            let endOfMonth = date.index(date.startIndex, offsetBy: 7)
+            let rangeOfMonth = startOfMonth ..< endOfMonth
+            let startOfDay = date.index(date.startIndex, offsetBy: 8)
+            let endOfDay = date.index(date.startIndex, offsetBy: 10)
+            let rangeOfDay = startOfDay ..< endOfDay
+            let year = date[rangeOfYear]
+            let month = date[rangeOfMonth]
+            let day = date[rangeOfDay]
+            date = "\(month)/\(day)/\(year)"
             
             prices.append(avg)
-            dates.append(time.substring(to: index))
+            dates.append(date)
         }
         
         prices = prices.reversed()

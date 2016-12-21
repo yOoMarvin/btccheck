@@ -29,6 +29,7 @@ class LineChartViewController: UIViewController {
             self.prices = response.prices
             self.dates = response.dates
             
+            
             //build chart
             self.setChart(dataPoints: self.dates, values: self.prices)
         }
@@ -41,6 +42,7 @@ class LineChartViewController: UIViewController {
         
         //change line chart text
         lineChartView.noDataText = "Hold still! I'm drawing this graph for you!"
+        lineChartView.noDataFont = UIFont(name: "Avenir Next", size: 23)
     }
 
     
