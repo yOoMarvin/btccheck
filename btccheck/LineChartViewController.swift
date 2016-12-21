@@ -10,61 +10,73 @@ import UIKit
 import Charts
 
 class LineChartViewController: UIViewController {
-    var months: [Double]!
+    var prices: [Double] = []
+    var dates: [String] = []
 
     @IBOutlet weak var lineChartView: LineChartView!
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        //change back navigation color. the blue is aweful
+        //change 'back' navigation color. the blue is aweful
         self.navigationController?.navigationBar.tintColor = UIColor.darkText
-        
-        //set dummy Data
-        months = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-        let unitsSold = [20.0, 4.0, 6.0, 3.0, 12.0, 16.0, 4.0, 18.0, 2.0, 4.0, 5.0, 4.0]
-        
-        //build chart
-        setChart(dataPoints: months, values: unitsSold)
-        
-        //animation and styling
-        lineChartView.animate(xAxisDuration: 2.0, yAxisDuration: 2.0)
-        lineChartView.xAxis.labelPosition = .bottom
-
-        
         
         //init bitcoin history resource and call completion to get data
         let resource = HistoryResource()
         resource.fetchHistory {
             (response) in
             
-            print(response.prices)
-            print(response.dates)
-            print(type(of: response.prices))
-            print(type(of: response.dates))
+            self.prices = response.prices
+            self.dates = response.dates
+            
+            //build chart
+            self.setChart(dataPoints: self.dates, values: self.prices)
         }
+        
+        
+        //animation and styling
+        lineChartView.animate(xAxisDuration: 2.0, yAxisDuration: 2.0)
+        lineChartView.xAxis.labelPosition = .bottom
+        lineChartView.rightAxis.enabled = false
+        
+        //change line chart text
+        lineChartView.noDataText = "Hold still! I'm drawing this graph for you!"
     }
 
-    func setChart(dataPoints: [Double], values: [Double]) {
-        //change line chart text
-        lineChartView.noDataText = "We have to go back Marty, something went wrong!"
+    
+    
+    func setChart(dataPoints: [String], values: [Double]) {
+        let formato:LineChartFormatter = LineChartFormatter()
+        formato.setArray(array: self.dates)
+        let xaxis:XAxis = XAxis()
         
         //
         var dataEntries: [ChartDataEntry] = []
         for i in 0..<dataPoints.count {
-            let dataEntry = ChartDataEntry(x: dataPoints[i], y: values[i] )
+            let dataEntry = ChartDataEntry(x: Double(i), y: values[i] )
             dataEntries.append(dataEntry)
+            formato.stringForValue(Double(i), axis: xaxis)
         }
+        xaxis.valueFormatter = formato
+
+        
         //datasets
         let data = LineChartData()
-        let dataSet = LineChartDataSet(values: dataEntries, label: "Units sold")
+        let dataSet = LineChartDataSet(values: dataEntries, label: "Bitcoin price in $")
     
         //colors
         dataSet.colors = [UIColor(red:1.00, green:0.76, blue:0.03, alpha:1.0)]
-        dataSet.circleColors = [UIColor(red:1.00, green:0.76, blue:0.03, alpha:1.0)]
+        //dataSet.circleColors = [UIColor(red:1.00, green:0.76, blue:0.03, alpha:1.0)]
+        
+        //Disable values and circles, because of data size
+        dataSet.drawCirclesEnabled = false
+        dataSet.drawValuesEnabled = false
         
         //add data set and show it
         data.addDataSet(dataSet)
         self.lineChartView.data = data
+        
+        self.lineChartView.xAxis.valueFormatter = xaxis.valueFormatter
         
     }
 }

@@ -19,6 +19,7 @@
 		5845D5C61E09979C00AC07F7 /* LineChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5845D5C51E09979C00AC07F7 /* LineChartViewController.swift */; };
 		5845D5CA1E09B65200AC07F7 /* HistoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5845D5C91E09B65200AC07F7 /* HistoryResponse.swift */; };
 		5845D5CE1E09B6B400AC07F7 /* HistoryResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5845D5CD1E09B6B400AC07F7 /* HistoryResource.swift */; };
+		5845D5D01E0AEF7F00AC07F7 /* LineChartFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5845D5CF1E0AEF7F00AC07F7 /* LineChartFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		5845D5C51E09979C00AC07F7 /* LineChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChartViewController.swift; sourceTree = "<group>"; };
 		5845D5C91E09B65200AC07F7 /* HistoryResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryResponse.swift; sourceTree = "<group>"; };
 		5845D5CD1E09B6B400AC07F7 /* HistoryResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryResource.swift; sourceTree = "<group>"; };
+		5845D5CF1E0AEF7F00AC07F7 /* LineChartFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChartFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 				5845D2BF1E087E0300AC07F7 /* BitcoinResource.swift */,
 				5845D5C91E09B65200AC07F7 /* HistoryResponse.swift */,
 				5845D5CD1E09B6B400AC07F7 /* HistoryResource.swift */,
+				5845D5CF1E0AEF7F00AC07F7 /* LineChartFormatter.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5845D5CE1E09B6B400AC07F7 /* HistoryResource.swift in Sources */,
+				5845D5D01E0AEF7F00AC07F7 /* LineChartFormatter.swift in Sources */,
 				5845D2C01E087E0300AC07F7 /* BitcoinResource.swift in Sources */,
 				5845D5CA1E09B65200AC07F7 /* HistoryResponse.swift in Sources */,
 				5845D2BE1E087DC500AC07F7 /* BitcoinResponse.swift in Sources */,

@@ -73,6 +73,9 @@ class HistoryResource{
             dates.append(time.substring(to: index))
         }
         
+        prices = prices.reversed()
+        dates = dates.reversed()
+        
         //build response
         let response = HistoryResponse(dates: dates, prices: prices)
         return response
