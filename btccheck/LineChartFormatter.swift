@@ -13,14 +13,15 @@ import Charts
 @objc(LineChartFormatter)
 class LineChartFormatter: NSObject, IAxisValueFormatter {
     
+    //declare array
     var mValues: [String]!
     
+    //function for set the array. values are given back later
     func setArray(array: [String]) -> (){
         mValues = array
     }
     
-    var months: [String]! = ["1", "2", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct"]
-    
+    //Format values for graph axis
     func stringForValue(_ value: Double, axis: AxisBase?) -> String {
         return mValues[Int(value)]
     }

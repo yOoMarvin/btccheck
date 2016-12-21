@@ -10,9 +10,12 @@ import UIKit
 import Charts
 
 class LineChartViewController: UIViewController {
+    
+    //declare arrays
     var prices: [Double] = []
     var dates: [String] = []
 
+    //line chart view
     @IBOutlet weak var lineChartView: LineChartView!
 
     
@@ -29,8 +32,7 @@ class LineChartViewController: UIViewController {
             self.prices = response.prices
             self.dates = response.dates
             
-            
-            //build chart
+            //build chart with the values
             self.setChart(dataPoints: self.dates, values: self.prices)
         }
         
@@ -49,11 +51,15 @@ class LineChartViewController: UIViewController {
     
     
     func setChart(dataPoints: [String], values: [Double]) {
+        
+        //function for setting the data for the graph
+        
+        //declare formatter and axis. give the formatter the array to work with
         let formato:LineChartFormatter = LineChartFormatter()
         formato.setArray(array: self.dates)
         let xaxis:XAxis = XAxis()
         
-        //
+        //set data entries array. needed to build the dataSet
         var dataEntries: [ChartDataEntry] = []
         for i in 0..<dataPoints.count {
             let dataEntry = ChartDataEntry(x: Double(i), y: values[i] )
@@ -69,7 +75,6 @@ class LineChartViewController: UIViewController {
     
         //colors
         dataSet.colors = [UIColor(red:1.00, green:0.76, blue:0.03, alpha:1.0)]
-        //dataSet.circleColors = [UIColor(red:1.00, green:0.76, blue:0.03, alpha:1.0)]
         
         //Disable values and circles, because of data size
         dataSet.drawCirclesEnabled = false
@@ -79,6 +84,7 @@ class LineChartViewController: UIViewController {
         data.addDataSet(dataSet)
         self.lineChartView.data = data
         
+        //reference the formatter
         self.lineChartView.xAxis.valueFormatter = xaxis.valueFormatter
         
     }

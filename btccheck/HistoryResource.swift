@@ -61,6 +61,7 @@ class HistoryResource{
             return nil
         }
         
+        //declare arrays
         var dates: [String] = []
         var prices: [Double] = []
         
@@ -88,6 +89,7 @@ class HistoryResource{
             dates.append(date)
         }
         
+        //reverse arrays for displaying data correct
         prices = prices.reversed()
         dates = dates.reversed()
         

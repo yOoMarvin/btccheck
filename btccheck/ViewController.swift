@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    //Labels
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var openLabel: UILabel!
@@ -39,6 +40,7 @@ class ViewController: UIViewController {
             self.highLabel.text = "\(response.high) $"
             self.lowLabel.text = "\(response.low) $"
             self.changeLabel.text = "\(response.change) %"
+            //format change label (color)
             if response.change > 0 {
                 self.changeLabel.textColor = UIColor(red:0.18, green:0.65, blue:0.20, alpha:1.0)
                 self.changeLabel.text = "+ \(response.change) %"
