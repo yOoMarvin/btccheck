@@ -55,7 +55,7 @@ class BitcoinResource {
     
     
     //
-    private func createResponse(fromData: Data) -> BitcoinResponse?{
+   private func createResponse(fromData: Data) -> BitcoinResponse?{
         guard let jsonDict = parseJson(data: fromData) else {
             print("problem with json processing")
             return nil

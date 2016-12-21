@@ -30,7 +30,18 @@ class LineChartViewController: UIViewController {
         lineChartView.animate(xAxisDuration: 2.0, yAxisDuration: 2.0)
         lineChartView.xAxis.labelPosition = .bottom
 
-
+        
+        
+        //init bitcoin history resource and call completion to get data
+        let resource = HistoryResource()
+        resource.fetchHistory {
+            (response) in
+            
+            print(response.prices)
+            print(response.dates)
+            print(type(of: response.prices))
+            print(type(of: response.dates))
+        }
     }
 
     func setChart(dataPoints: [Double], values: [Double]) {
