@@ -43,6 +43,7 @@ class LineChartViewController: UIViewController {
         //change line chart text
         lineChartView.noDataText = "Hold still! I'm drawing this graph for you!"
         lineChartView.noDataFont = UIFont(name: "Avenir Next", size: 23)
+        lineChartView.chartDescription?.enabled = false
     }
 
     
