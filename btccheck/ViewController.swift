@@ -46,7 +46,7 @@ class ViewController: UIViewController {
                 self.changeLabel.text = "+ \(response.change) %"
             } else {
                 self.changeLabel.textColor = UIColor(red:0.65, green:0.18, blue:0.18, alpha:1.0)
-                self.changeLabel.text = "- \(response.change) %"
+                self.changeLabel.text = "\(response.change) %"
             }
             self.avgLabel.text = "\(response.avg) $"
             self.volumeLabel.text = "\(response.volume)"
